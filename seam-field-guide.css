@@ -120,6 +120,7 @@ body.field-guide {
 }
 
 .doc-title em {
+  font-family: var(--font-accent);
   font-style: normal;
   color: var(--c-signal);
 }
@@ -206,6 +207,7 @@ body.field-guide {
 }
 
 .seam-intro em {
+  font-family: var(--font-accent);
   font-style: normal;
   color: var(--c-signal);
 }
@@ -313,6 +315,7 @@ body.field-guide {
 }
 
 .force-feel {
+  font-family: var(--font-accent);
   font-size: var(--t-small);
   font-style: italic;
   color: var(--c-ink-muted);
@@ -321,6 +324,7 @@ body.field-guide {
 
 /* ── DIAGNOSTIC QUESTIONS ── */
 .questions-intro {
+  font-family: var(--font-accent);
   font-size: var(--t-small);
   font-style: italic;
   color: var(--c-ink-muted);
@@ -389,6 +393,7 @@ body.field-guide {
 }
 
 .reframe-final {
+  font-family: var(--font-accent);
   font-size: var(--t-small);
   font-style: italic;
   color: var(--c-ink-muted);

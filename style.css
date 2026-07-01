@@ -16,7 +16,8 @@
   --c-drag: #46586B;
 
   --font-display: 'Bricolage Grotesque', sans-serif;
-  --font-body: 'Inter', sans-serif;
+  --font-body: 'Instrument Sans', sans-serif;
+  --font-accent: 'Instrument Serif', serif;
 
   --t-hero: clamp(3.2rem, 10vw, 8.5rem);
   --t-h1: clamp(2rem, 5vw, 4rem);
@@ -255,6 +256,7 @@ nav.scrolled {
 }
 
 .hero-headline em {
+  font-family: var(--font-accent);
   font-style: normal;
   color: var(--c-signal);
 }
@@ -415,6 +417,7 @@ nav.scrolled {
 .symptom-line:last-child {
   border-bottom: none;
   color: rgba(244, 239, 228, 0.8);
+  font-family: var(--font-accent);
   font-style: italic;
   padding-top: var(--sp-20);
 }
@@ -447,6 +450,7 @@ nav.scrolled {
 }
 
 .pos-statement em {
+  font-family: var(--font-accent);
   font-style: normal;
   color: var(--c-signal);
 }
@@ -540,6 +544,7 @@ nav.scrolled {
 }
 
 .force-mechanic {
+  font-family: var(--font-accent);
   font-size: var(--t-small);
   font-style: italic;
   line-height: 1.5;
@@ -550,6 +555,7 @@ nav.scrolled {
 }
 
 .force-felt {
+  font-family: var(--font-accent);
   font-size: var(--t-body);
   line-height: 1.65;
 
@@ -651,6 +657,7 @@ nav.scrolled {
 }
 
 .work-force-obs {
+  font-family: var(--font-accent);
   font-size: var(--t-small);
   font-style: italic;
   line-height: 1.5;
@@ -763,6 +770,7 @@ nav.scrolled {
 }
 
 .about-body em {
+  font-family: var(--font-accent);
   color: var(--c-ink);
   font-style: italic;
 }
@@ -818,7 +826,7 @@ nav.scrolled {
 }
 
 .origin-text {
-  font-family: var(--font-display);
+  font-family: var(--font-accent);
   font-size: clamp(1rem, 1.8vw, 1.3rem);
   font-weight: 600;
   line-height: 1.5;
