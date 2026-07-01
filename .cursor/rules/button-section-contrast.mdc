@@ -1,0 +1,27 @@
+---
+description: CTA fill must contrast with section surface — BDR-0023
+globs:
+  - style.css
+  - "*.html"
+alwaysApply: false
+---
+
+# Button / Section Contrast (BDR-0023)
+
+Before adding or moving CTAs, read `sightline-brand-system/bdr/0023-section-surface-cta-contrast.md`.
+
+## Rule
+
+Filled buttons and section backgrounds **must not share the same resolved color**.
+
+| Section bg | Primary CTA fill |
+|---|---|
+| `--c-ground` / alt | `--c-deep` (default `.btn-primary`) |
+| `--c-deep` | `--c-ground` (cream) or `--c-signal` — use `.on-deep` ancestor or section-scoped override |
+| `--c-ink` (footer) | links only; cream text tokens |
+
+On deep sections, wrap CTAs in `.on-deep` or apply documented selectors — do not use default `.btn-primary` deep-green fill on deep-green sections.
+
+Secondary links on deep: ground-alpha underline (not `--c-ink-muted`).
+
+Log unresolved cases in `sightline-brand-system/spec/04-provenance-debt-log.md`.
