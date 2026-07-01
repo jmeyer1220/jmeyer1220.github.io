@@ -1,0 +1,7 @@
+# Generated codebase specs (local maintenance docs, not versioned)
+spec/
+docs/specs/
+bdr/
+tokens/
+AGENTS.md
+README.md

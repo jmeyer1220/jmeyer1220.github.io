@@ -1,0 +1,18 @@
+---
+description: Before implementing code, consult specs and ADRs; ensure a spec exists for new/modified areas and that changes align with documented decisions.
+alwaysApply: true
+---
+
+# Specs and ADRs Before Code
+
+Before adding or changing implementation in this codebase:
+
+1. **Spec exists:** Check `docs/specs/` (features, modules, components). If you are modifying an existing area, read the relevant spec. If you are adding a new feature, module, or component, create or update the spec first (purpose, implementation, dependencies, future enhancements).
+
+2. **Align with ADRs:** Read relevant docs in `docs/specs/adr/`. Ensure your change is consistent with documented architectural decisions and philosophy. If the change contradicts an ADR, either update the ADR (e.g. supersede with a new one) or confirm with the user before proceeding.
+
+3. **Brand and copy decisions:** Visual identity, typography, color roles, copy patterns, and content IA are governed by `sightline-brand-system/AGENTS.md` and locked BDRs in `sightline-brand-system/bdr/`. Consult those for design and copy decisions — do not invent brand choices in code. Log provenance debt in `sightline-brand-system/spec/04-provenance-debt-log.md` when code cannot be traced to a BDR.
+
+4. **When specs/ADRs are missing:** If the project has no `docs/specs/` yet, run the codebase-specs skill to generate specs and ADRs, then continue implementation in line with them.
+
+5. **As you go:** When implementing a feature request or update, before considering the work done, add or update the relevant spec(s) so they reflect the new or changed behavior, and add or update ADRs for any new or changed architectural decisions. Keep specs and ADRs in sync with the code.

@@ -1,4 +1,3 @@
-
 :root {
   --c-ground: #F4EFE4;
   --c-ground-alt: #EDE6D8;
@@ -13,6 +12,8 @@
 
   --c-signal: #E05020;
   --c-signal-soft: #F5C4AD;
+
+  --c-drag: #46586B;
 
   --font-display: 'Bricolage Grotesque', sans-serif;
   --font-body: 'Inter', sans-serif;
@@ -139,21 +140,21 @@ nav.scrolled {
 }
 
 .nav-cta {
-  background: var(--c-ink) !important;
-  color: var(--c-ground) !important;
+  background: var(--c-deep);
+  color: var(--c-deep-text);
 
-  padding: var(--sp-8) var(--sp-20) !important;
+  padding: var(--sp-8) var(--sp-20);
 
-  border-radius: var(--r-pill) !important;
+  border-radius: var(--r-pill);
 
-  font-size: var(--t-small) !important;
-  font-weight: 600 !important;
+  font-size: var(--t-small);
+  font-weight: 600;
 
-  transition: background 0.2s !important;
+  transition: background 0.2s;
 }
 
 .nav-cta:hover {
-  background: var(--c-deep) !important;
+  background: var(--c-deep-light);
 }
 
 /* HERO */
@@ -968,8 +969,8 @@ nav.scrolled {
 }
 
 .inquiry-option.selected {
-  background: rgba(224, 80, 32, 0.15);
-  border-color: var(--c-signal);
+  background: rgba(26, 56, 48, 0.85);
+  border-color: var(--c-deep);
 }
 
 .option-letter {
