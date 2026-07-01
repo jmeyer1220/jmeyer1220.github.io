@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Sightline lived out — this site as a case study in symptom, force, decision, and artifact.">
+<title>Sightline Lived Out — Jonathan Meyer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap" rel="stylesheet">
+<link href="../style.css?v=1.5" rel="stylesheet">
+</head>
+<body class="sightline-lived-out">
+
+<nav id="nav" aria-label="Site">
+  <a href="../" class="nav-name">Jonathan Meyer</a>
+  <ul class="nav-links">
+    <li><a href="../#work">Work</a></li>
+    <li><a href="../#about">About</a></li>
+    <li><a href="../#inquiry" class="nav-cta">Inquire →</a></li>
+  </ul>
+</nav>
+
+<header class="slo-hero">
+  <div class="wrap">
+    <p class="slo-eyebrow">Case study</p>
+    <h1 class="slo-title">Sightline lived out</h1>
+    <p class="slo-lede">This portfolio site isn't just a place to show work. It's a governed artifact — built the same way I build for clients: name the symptom, name the force, lock the decision, ship the page.</p>
+  </div>
+</header>
+
+<section class="slo-arc slo-arc--symptom" aria-labelledby="symptom-title">
+  <div class="wrap">
+    <p class="slo-step">01 — Symptom</p>
+    <div class="slo-symptom-list">
+      <div class="symptom-line lit">The brand launched.</div>
+      <div class="symptom-line lit">The site works.</div>
+      <div class="symptom-line lit">The systems exist.</div>
+      <div class="symptom-line">Something still feels disconnected.</div>
+    </div>
+    <h2 class="slo-arc-title" id="symptom-title">The failure rarely starts where it becomes visible.</h2>
+    <p class="slo-section-lead">A site can look finished while the real decisions live only in memory.</p>
+    <p class="slo-body">Typography picked ad hoc. CTAs patched section by section. Category colors that run out before the third tag. Visitors feel the drift even when they can't name it.</p>
+    <p class="slo-body"><em>Meaning leaks first.</em></p>
+    <span class="ds-bdr-tag">BDR-0005</span>
+  </div>
+</section>
+
+<section class="slo-arc slo-arc--force" aria-labelledby="force-title">
+  <div class="wrap">
+    <p class="slo-step">02 — Force</p>
+    <h2 class="slo-arc-title" id="force-title">Where the pressure shows up here</h2>
+    <p class="slo-section-lead">The site teaches a diagnostic framework — but the design choices weren't locked in a traceable system.</p>
+    <p class="slo-force-name">Signal Loss — cross-cutting with governance</p>
+    <p class="slo-force-sub">"Something keeps slipping between strategy and execution. I can't tell where the disconnect is."</p>
+    <p class="slo-body">Intent lived in conversation. Execution lived in CSS. Nothing held the two together — so every tweak risked becoming a new local rule.</p>
+    <p class="slo-body">Signal Loss names that seam. The fix isn't more polish. It's <em>governed provenance</em> — written decisions that say what code is allowed to change, and what was ruled out.</p>
+    <span class="ds-bdr-tag">BDR-0004</span>
+  </div>
+</section>
+
+<section class="slo-arc slo-arc--decision" aria-labelledby="decision-title">
+  <div class="wrap">
+    <p class="slo-step">03 — Decision</p>
+    <h2 class="slo-arc-title" id="decision-title">BDR-governed choices on this site</h2>
+    <p class="slo-section-lead">Symptom → force → <strong>decision</strong> → artifact. The decision is the step most sites skip.</p>
+
+    <aside class="slo-bdr-def" aria-labelledby="bdr-def-title">
+      <p class="slo-bdr-def-label" id="bdr-def-title">What is a BDR?</p>
+      <p class="slo-bdr-def-body">A <strong>Brand Decision Record</strong> is a short, locked write-up of what we chose, why we chose it, and what we ruled out — so the site doesn't slowly drift away from intent.</p>
+      <ul class="slo-bdr-def-list">
+        <li><strong>What</strong> — the decision, in one line</li>
+        <li><strong>Why</strong> — the problem it solves</li>
+        <li><strong>Ruled out</strong> — what we didn't do (kept in repo files, not on this page)</li>
+      </ul>
+      <p class="slo-bdr-def-bridge">The pages below are artifacts — live proof that a locked BDR became real code.</p>
+    </aside>
+
+    <ul class="slo-decision-list">
+      <li class="slo-decision-item">
+        <span class="ds-bdr-tag">BDR-0009</span>
+        <p class="slo-decision-one">Typography migration to Instrument Sans body and Instrument Serif accent — editorial voice without flattening UI metadata.</p>
+      </li>
+      <li class="slo-decision-item">
+        <span class="ds-bdr-tag">BDR-0004 · BDR-0007</span>
+        <p class="slo-decision-one">Three-force IA with Work before About — evidence and taxonomy precede bio and credentials.</p>
+      </li>
+      <li class="slo-decision-item">
+        <span class="ds-bdr-tag">BDR-0006</span>
+        <p class="slo-decision-one">Self-diagnosis inquiry (A/B/C/D) instead of a generic contact form — diagnostic frame through conversion.</p>
+      </li>
+      <li class="slo-decision-item">
+        <span class="ds-bdr-tag">ADR-007</span>
+        <p class="slo-decision-one">Consolidated stylesheet — field guide and homepage share tokens in one <code>style.css</code>, scoped by body class.</p>
+      </li>
+      <li class="slo-decision-item">
+        <span class="ds-bdr-tag">BDR-0010 · BDR-0011</span>
+        <p class="slo-decision-one">Public design-system catalog and this case-study page — footer discovery, one-line provenance on public surfaces.</p>
+      </li>
+      <li class="slo-decision-item">
+        <span class="ds-bdr-tag">BDR-0017 · BDR-0018</span>
+        <p class="slo-decision-one">Layered plain-language readability on the field guide and this page — diagnostic voice without jargon walls.</p>
+      </li>
+    </ul>
+    <p class="slo-body slo-body--debt">Debt stays visible: no homepage case study tagged Complexity Drag yet (BDR-0012). Locked BDRs record reality — they don't pretend the site is finished.</p>
+    <span class="ds-bdr-tag">BDR-0018</span>
+  </div>
+</section>
+
+<section class="slo-arc slo-arc--artifact" aria-labelledby="artifact-title">
+  <div class="wrap">
+    <p class="slo-step">04 — Artifact</p>
+    <h2 class="slo-arc-title" id="artifact-title">Live pages — the system instantiated</h2>
+    <p class="slo-section-lead">Each link is a production page that points back to locked decisions.</p>
+    <p class="slo-body">A locked BDR with zero live pages is still a hypothesis. These pages close that gap.</p>
+    <div class="slo-artifact-grid">
+      <a href="../" class="slo-artifact-card">
+        <p class="slo-artifact-label">Portfolio</p>
+        <p class="slo-artifact-name">Home</p>
+        <p class="slo-artifact-desc">Forces, work tagged by force, self-diagnosis inquiry — BDR-0004 through 0007.</p>
+      </a>
+      <a href="../seam-field-guide/" class="slo-artifact-card">
+        <p class="slo-artifact-label">Field guide</p>
+        <p class="slo-artifact-name">Seam</p>
+        <p class="slo-artifact-desc">Print-oriented diagnostic document — layered readability per BDR-0017.</p>
+      </a>
+      <a href="../design-system/" class="slo-artifact-card">
+        <p class="slo-artifact-label">Catalog</p>
+        <p class="slo-artifact-name">Design System</p>
+        <p class="slo-artifact-desc">Tokens, components, patterns, and locked-BDR provenance index — BDR-0010.</p>
+      </a>
+      <a href="../sightline-lived-out/" class="slo-artifact-card" aria-current="page">
+        <p class="slo-artifact-label">Narrative</p>
+        <p class="slo-artifact-name">This page</p>
+        <p class="slo-artifact-desc">Symptom → force → decision → artifact — with a plain-language BDR definition.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="slo-arc slo-arc--invite" aria-labelledby="invite-title">
+  <div class="wrap">
+    <p class="slo-step">05 — Invitation</p>
+    <h2 class="slo-arc-title" id="invite-title">If something feels off — <em>you already know the question.</em></h2>
+    <p class="slo-section-lead">You don't need the full framework to start. You need to name what feels wrong.</p>
+    <p class="slo-body">I work best with organizations that sense the disconnect but can't pinpoint the seam. The inquiry on the homepage is a working example: pick the force that sounds closest, or say you're not sure yet. Both are valid entry points.</p>
+    <div class="slo-invite-actions">
+      <a href="../#inquiry" class="btn-primary">Start the self-diagnosis</a>
+      <a href="mailto:jmyr.creative@gmail.com?subject=Diagnostic%20inquiry%20%E2%80%94%20Signal%20Loss" class="btn-secondary">Email directly →</a>
+    </div>
+    <span class="ds-bdr-tag" style="margin-top: var(--sp-24); display: inline-flex;">BDR-0006</span>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-inner">
+      <span class="footer-name">Jonathan Meyer</span>
+      <span class="footer-copy">Built to carry. · St. Louis, MO</span>
+      <ul class="footer-links">
+        <li><a href="../">Home</a></li>
+        <li><a href="../design-system/">Design System</a></li>
+        <li><a href="../sightline-lived-out/" aria-current="page">Sightline Lived Out</a></li>
+        <li><a href="../seam-field-guide/">Seam Field Guide</a></li>
+        <li><a href="mailto:jmyr.creative@gmail.com">Email</a></li>
+        <li><a href="https://www.linkedin.com/in/jonathansmeyer/" target="_blank" rel="noopener">LinkedIn</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script>
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 40), {passive:true});
+</script>
+
+</body>
+</html>
