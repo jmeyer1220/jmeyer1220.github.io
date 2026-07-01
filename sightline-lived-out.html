@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap" rel="stylesheet">
-<link href="style.css?v=1.3" rel="stylesheet">
+<link href="style.css?v=1.5" rel="stylesheet">
 </head>
 <body class="sightline-lived-out">
 
@@ -25,7 +25,7 @@
   <div class="wrap">
     <p class="slo-eyebrow">Case study</p>
     <h1 class="slo-title">Sightline lived out</h1>
-    <p class="slo-lede">This portfolio site is not just a container for work — it is a governed artifact. Symptom → force → decision → artifact. The method applied to itself.</p>
+    <p class="slo-lede">This portfolio site isn't just a place to show work. It's a governed artifact — built the same way I build for clients: name the symptom, name the force, lock the decision, ship the page.</p>
   </div>
 </header>
 
@@ -39,7 +39,9 @@
       <div class="symptom-line">Something still feels disconnected.</div>
     </div>
     <h2 class="slo-arc-title" id="symptom-title">The failure rarely starts where it becomes visible.</h2>
-    <p class="slo-body">A portfolio can look finished while decisions live only in memory — typography chosen ad hoc, CTAs patched per section, taxonomy colors that run out before the third category. Visitors feel the drift even when they can't name it. <em>Meaning leaks first.</em></p>
+    <p class="slo-section-lead">A site can look finished while the real decisions live only in memory.</p>
+    <p class="slo-body">Typography picked ad hoc. CTAs patched section by section. Category colors that run out before the third tag. Visitors feel the drift even when they can't name it.</p>
+    <p class="slo-body"><em>Meaning leaks first.</em></p>
     <span class="ds-bdr-tag">BDR-0005</span>
   </div>
 </section>
@@ -48,9 +50,11 @@
   <div class="wrap">
     <p class="slo-step">02 — Force</p>
     <h2 class="slo-arc-title" id="force-title">Where the pressure shows up here</h2>
+    <p class="slo-section-lead">The site teaches a diagnostic framework — but the design choices weren't locked in a traceable system.</p>
     <p class="slo-force-name">Signal Loss — cross-cutting with governance</p>
     <p class="slo-force-sub">"Something keeps slipping between strategy and execution. I can't tell where the disconnect is."</p>
-    <p class="slo-body">The site encodes a diagnostic framework (three forces, self-diagnosis CTA) but design decisions weren't locked in a traceable system — every tweak risked becoming a new local rule. Signal Loss names that seam: intent decided in conversation, execution in CSS, with no artifact holding the two together. The fix isn't more polish. It's <em>governed provenance</em> — BDRs downstream of which code is allowed to change.</p>
+    <p class="slo-body">Intent lived in conversation. Execution lived in CSS. Nothing held the two together — so every tweak risked becoming a new local rule.</p>
+    <p class="slo-body">Signal Loss names that seam. The fix isn't more polish. It's <em>governed provenance</em> — written decisions that say what code is allowed to change, and what was ruled out.</p>
     <span class="ds-bdr-tag">BDR-0004</span>
   </div>
 </section>
@@ -59,6 +63,19 @@
   <div class="wrap">
     <p class="slo-step">03 — Decision</p>
     <h2 class="slo-arc-title" id="decision-title">BDR-governed choices on this site</h2>
+    <p class="slo-section-lead">Symptom → force → <strong>decision</strong> → artifact. The decision is the step most sites skip.</p>
+
+    <aside class="slo-bdr-def" aria-labelledby="bdr-def-title">
+      <p class="slo-bdr-def-label" id="bdr-def-title">What is a BDR?</p>
+      <p class="slo-bdr-def-body">A <strong>Brand Decision Record</strong> is a short, locked write-up of what we chose, why we chose it, and what we ruled out — so the site doesn't slowly drift away from intent.</p>
+      <ul class="slo-bdr-def-list">
+        <li><strong>What</strong> — the decision, in one line</li>
+        <li><strong>Why</strong> — the problem it solves</li>
+        <li><strong>Ruled out</strong> — what we didn't do (kept in repo files, not on this page)</li>
+      </ul>
+      <p class="slo-bdr-def-bridge">The pages below are artifacts — live proof that a locked BDR became real code.</p>
+    </aside>
+
     <ul class="slo-decision-list">
       <li class="slo-decision-item">
         <span class="ds-bdr-tag">BDR-0009</span>
@@ -80,8 +97,13 @@
         <span class="ds-bdr-tag">BDR-0010 · BDR-0011</span>
         <p class="slo-decision-one">Public design-system catalog and this case-study page — footer discovery, one-line provenance on public surfaces.</p>
       </li>
+      <li class="slo-decision-item">
+        <span class="ds-bdr-tag">BDR-0017 · BDR-0018</span>
+        <p class="slo-decision-one">Layered plain-language readability on the field guide and this page — diagnostic voice without jargon walls.</p>
+      </li>
     </ul>
-    <p class="slo-body" style="margin-top: var(--sp-32);">Debt stays visible: force-tag colors incomplete (BDR-0008), CTA roles fragmented (BDR-0002). Locked BDRs record reality — they don't pretend the site is finished.</p>
+    <p class="slo-body slo-body--debt">Debt stays visible: no homepage case study tagged Complexity Drag yet (BDR-0012). Locked BDRs record reality — they don't pretend the site is finished.</p>
+    <span class="ds-bdr-tag">BDR-0018</span>
   </div>
 </section>
 
@@ -89,7 +111,8 @@
   <div class="wrap">
     <p class="slo-step">04 — Artifact</p>
     <h2 class="slo-arc-title" id="artifact-title">Live pages — the system instantiated</h2>
-    <p class="slo-body">Each link is a production artifact referencing locked BDRs. A locked BDR with zero instantiations is a hypothesis — these pages close that gap.</p>
+    <p class="slo-section-lead">Each link is a production page that points back to locked decisions.</p>
+    <p class="slo-body">A locked BDR with zero live pages is still a hypothesis. These pages close that gap.</p>
     <div class="slo-artifact-grid">
       <a href="index.html" class="slo-artifact-card">
         <p class="slo-artifact-label">Portfolio</p>
@@ -99,7 +122,7 @@
       <a href="seam-field-guide.html" class="slo-artifact-card">
         <p class="slo-artifact-label">Field guide</p>
         <p class="slo-artifact-name">Seam</p>
-        <p class="slo-artifact-desc">Print-oriented diagnostic document — shared tokens, scoped layout per ADR-007.</p>
+        <p class="slo-artifact-desc">Print-oriented diagnostic document — layered readability per BDR-0017.</p>
       </a>
       <a href="design-system.html" class="slo-artifact-card">
         <p class="slo-artifact-label">Catalog</p>
@@ -109,7 +132,7 @@
       <a href="sightline-lived-out.html" class="slo-artifact-card" aria-current="page">
         <p class="slo-artifact-label">Narrative</p>
         <p class="slo-artifact-name">This page</p>
-        <p class="slo-artifact-desc">Symptom → force → decision → artifact arc for the site itself.</p>
+        <p class="slo-artifact-desc">Symptom → force → decision → artifact — with a plain-language BDR definition.</p>
       </a>
     </div>
   </div>
@@ -119,7 +142,8 @@
   <div class="wrap">
     <p class="slo-step">05 — Invitation</p>
     <h2 class="slo-arc-title" id="invite-title">If something feels off — <em>you already know the question.</em></h2>
-    <p class="slo-body">I work best with organizations that sense the disconnect but can't pinpoint the seam. The inquiry on the homepage is a working example: choose the force that sounds closest, or admit you're not sure yet. Both are valid entry points.</p>
+    <p class="slo-section-lead">You don't need the full framework to start. You need to name what feels wrong.</p>
+    <p class="slo-body">I work best with organizations that sense the disconnect but can't pinpoint the seam. The inquiry on the homepage is a working example: pick the force that sounds closest, or say you're not sure yet. Both are valid entry points.</p>
     <div class="slo-invite-actions">
       <a href="index.html#inquiry" class="btn-primary">Start the self-diagnosis</a>
       <a href="mailto:jmyr.creative@gmail.com?subject=Diagnostic%20inquiry%20%E2%80%94%20Signal%20Loss" class="btn-secondary">Email directly →</a>
