@@ -25,7 +25,7 @@
   <div class="wrap">
     <p class="verdict-sample-nav-label">Sightline samples</p>
     <ul class="verdict-sample-nav-list">
-      <li><a href="./" aria-current="page">Sample A — convergent (contact form)</a></li>
+      <li><a href="./" aria-current="page">Sample A — convergent (maintenance form)</a></li>
       <li><a href="mca/">Sample B — competing hypotheses (MCA)</a></li>
     </ul>
   </div>
@@ -33,10 +33,10 @@
 
 <header class="verdict-hero">
   <div class="wrap">
-    <p class="verdict-eyebrow">Sightline Verdict · Redacted Client · fixed-scope diagnostic</p>
+    <p class="verdict-eyebrow">Sightline Verdict · Boone Supported Living · fixed-scope diagnostic</p>
     <h1 class="verdict-title">Sample verdict document</h1>
-    <p class="verdict-lede">This is an illustrative deliverable — anonymized, redacted, and shortened. It shows what a Sightline engagement ends with: not a bug list, but a map of where promises are at risk.</p>
-    <p class="verdict-disclaimer">Supported living provider (Midwest). Names, URLs, and vendor details removed. Content is representative, not a live client file.</p>
+    <p class="verdict-lede">This is an illustrative deliverable — shortened and with vendor details removed. It shows what a Sightline engagement ends with: not a bug list, but a map of where promises are at risk.</p>
+    <p class="verdict-disclaimer">Boone Supported Living — supported living provider (Midwest). Client named with permission; URLs and vendor details removed. Content is representative of a real engagement, not a live client file.</p>
   </div>
 </header>
 
@@ -46,8 +46,8 @@
     <div class="wrap">
       <p class="verdict-step">01 — The promise</p>
       <h2 class="verdict-section-title" id="promise-title">What the organization believed the system was doing</h2>
-      <p class="verdict-section-lead">Families and care coordinators could reach out through the website when someone needed a residential placement.</p>
-      <p class="verdict-body">The contact form on the homepage was treated as the front door for new intakes. Marketing copy promised a response within one business day. Staff assumed every submission landed in the CRM. Leadership believed the digital intake path matched what families were told on the phone.</p>
+      <p class="verdict-section-lead">Residents at Boone Supported Living could submit maintenance requests through the website when something needed fixing at their residence.</p>
+      <p class="verdict-body">The maintenance request form was treated as the primary path for residents to ask for help — not marketing, not family intake, not placement. Staff assumed every submission reached the maintenance team. Leadership believed the digital path matched what residents were told in person and on the phone. For a highly vulnerable audience, some requests were urgent; silent failure was especially harmful.</p>
       <span class="ds-bdr-tag">BDR-0005</span>
     </div>
   </section>
@@ -75,28 +75,28 @@
           <tbody>
             <tr class="verdict-tier verdict-tier--urgent">
               <td><span class="verdict-tier-label">Urgent</span></td>
-              <td>Homepage contact form failing silently — expired third-party API key</td>
-              <td>Every submission since key expiry discarded with no error shown to the visitor and no alert to staff</td>
+              <td>Maintenance request form failing silently — expired or missing third-party API key</td>
+              <td>Every submission since key failure discarded with no error shown to the resident and no alert to staff — including requests that were sometimes urgent</td>
             </tr>
             <tr class="verdict-tier verdict-tier--watch">
               <td><span class="verdict-tier-label">Watch</span></td>
               <td>No error monitoring on form submission path</td>
-              <td>Next failure would repeat the same silent gap — no one would know until intake volume dropped</td>
+              <td>Next failure would repeat the same silent gap — no one would know until a resident escalated or staff noticed a pattern</td>
             </tr>
             <tr class="verdict-tier verdict-tier--watch">
               <td><span class="verdict-tier-label">Watch</span></td>
               <td>Success message still displays after failed submission</td>
-              <td>Visitors believe help is on the way; organization believes silence means low demand</td>
+              <td>Residents believe help is on the way; staff believe silence means low volume rather than a broken path</td>
             </tr>
             <tr class="verdict-tier verdict-tier--watch">
               <td><span class="verdict-tier-label">Watch</span></td>
-              <td>No documented backup intake path on the site</td>
-              <td>Phone number exists but is not surfaced as fallback when digital intake fails</td>
+              <td>No backup visibility for submissions until interim safety net installed</td>
+              <td>Google Sheet sync was added so staff could check requests while the root cause was sorted — but that path was not designed as permanent infrastructure</td>
             </tr>
             <tr class="verdict-tier verdict-tier--stable">
               <td><span class="verdict-tier-label">Stable</span></td>
-              <td>Phone intake line staffed and logged in CRM</td>
-              <td>Human path works — but volume is low because marketing drives families to the form</td>
+              <td>Phone and in-person reporting still reached staff</td>
+              <td>Human paths worked — but residents who trusted the form had no signal that their request never arrived</td>
             </tr>
           </tbody>
         </table>
@@ -112,9 +112,10 @@
       <p class="verdict-section-lead">These are the handoffs where meaning got lost — not because anyone failed, but because no one owned the seam.</p>
       <ul class="verdict-seam-list">
         <li class="verdict-seam-item"><span class="verdict-seam-arrow">→</span> Original developer departed — no one retained backend access or API credentials documentation</li>
-        <li class="verdict-seam-item"><span class="verdict-seam-arrow">→</span> Marketing owns front-end copy and form UX; operations owns CRM — neither monitors submission delivery</li>
+        <li class="verdict-seam-item"><span class="verdict-seam-arrow">→</span> Web team owned the WordPress form plugin and front-end UX; operations owned maintenance response — neither monitored whether submissions actually arrived</li>
         <li class="verdict-seam-item"><span class="verdict-seam-arrow">→</span> Form plugin vendor rotated API keys; renewal notice went to a departed employee's inbox</li>
-        <li class="verdict-seam-item"><span class="verdict-seam-arrow">→</span> "The site works" tested visually, not functionally — green checkmark on publish masked broken intake</li>
+        <li class="verdict-seam-item"><span class="verdict-seam-arrow">→</span> "The site works" tested visually, not functionally — the form looked fine while maintenance requests vanished</li>
+        <li class="verdict-seam-item"><span class="verdict-seam-arrow">→</span> Mail path from form plugin through WordPress core had no tracing until a custom plugin (Mailscope) was built to follow what happened after submit</li>
       </ul>
     </div>
   </section>
@@ -125,7 +126,7 @@
       <h2 class="verdict-section-title" id="verdict-title-block">What you can't un-see</h2>
       <p class="verdict-section-lead">One paragraph. The diagnostic question answered.</p>
       <blockquote class="verdict-blockquote">
-        <p>The system did not keep the promise it made. Families were told they could reach out online and expect a response. For months, the form looked fine while every submission vanished — and because nothing alerted anyone, the organization interpreted silence as low demand rather than broken intake. The risk isn't one expired key. It's that no seam between marketing, web, and operations was owned enough to catch it.</p>
+        <p>The system did not keep the promise it made to residents. They were told they could request maintenance online and expect staff to receive it. For months, the form looked fine while every submission vanished — and because nothing alerted anyone, the organization interpreted silence as low volume rather than a broken path. For a vulnerable audience, that gap is not abstract: urgent requests can look handled when no one on the other end ever saw them. The risk isn't one expired key. It's that no seam between web, the form plugin, and operations was owned enough to catch it.</p>
       </blockquote>
       <span class="ds-bdr-tag">BDR-0005</span>
     </div>
@@ -137,11 +138,12 @@
       <h2 class="verdict-section-title" id="sequence-title">What to fix first — and what to watch</h2>
       <p class="verdict-section-lead">Not a build proposal. A priority order so fixes don't scatter.</p>
       <ol class="verdict-sequence-list">
-        <li><strong>Restore and verify form delivery</strong> — rotate API credentials, submit test intakes, confirm CRM receipt</li>
-        <li><strong>Fix the success-state lie</strong> — form must not thank the visitor when submission failed</li>
+        <li><strong>Restore and verify form delivery</strong> — rotate or restore API credentials, submit test maintenance requests, confirm staff receipt</li>
+        <li><strong>Keep the Google Sheet safety net until delivery is verified</strong> — interim sync so staff stay current while root cause is fixed; decide later whether a permanent backup path is needed</li>
+        <li><strong>Fix the success-state lie</strong> — form must not thank the resident when submission failed</li>
+        <li><strong>Deploy mail tracing (Mailscope)</strong> — trace the path from form plugin through WordPress core so the next failure is diagnosable, not silent</li>
         <li><strong>Add submission monitoring</strong> — alert on failure, not on silence</li>
-        <li><strong>Surface backup intake on the site</strong> — phone path visible when digital path is primary marketing message</li>
-        <li><strong>Assign seam ownership</strong> — one role accountable for "does intake still work?" quarterly</li>
+        <li><strong>Assign seam ownership</strong> — one role accountable for "do maintenance requests still reach staff?" quarterly</li>
       </ol>
       <p class="verdict-body verdict-body--note">Full Sightline engagements include facilitated readout and seam documentation. This sample shows the written artifact only.</p>
       <div class="verdict-invite-actions">
@@ -149,7 +151,7 @@
         <a href="mca/" class="btn-secondary">See competing-hypotheses sample →</a>
         <a href="../sightline-lived-out/" class="btn-secondary">How Sightline works on this site →</a>
       </div>
-      <span class="ds-bdr-tag">BDR-0024</span>
+      <span class="ds-bdr-tag">BDR-0024 · BDR-0031</span>
     </div>
   </section>
 
