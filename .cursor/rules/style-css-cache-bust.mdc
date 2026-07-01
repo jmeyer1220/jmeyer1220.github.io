@@ -11,7 +11,7 @@ All HTML pages link `style.css` with a version query param (e.g. `style.css?v=1.
 
 ## Before considering CSS work done
 
-1. **If you modified `style.css`:** Increment the version in every HTML file that links it (`index.html`, `design-system/index.html`, `sightline-lived-out/index.html`, `seam-field-guide/index.html`, `verdict/index.html`, and any future pages). Keep the same version across all pages.
+1. **If you modified `style.css`:** Increment the version in every HTML file that links it (`index.html`, `design-system/index.html`, `sightline/index.html`, `sightline-lived-out/index.html`, `seam-field-guide/index.html`, `verdict/index.html`, `verdict/mca/index.html`, and any future pages). Keep the same version across all pages.
 2. **If you only changed HTML** (no `style.css` edits): Do not bump the version.
 3. **Version format:** Use semantic increments (`1.2` → `1.3`) or integer bumps (`2` → `3`). Stay consistent with the current value in `index.html`.
 

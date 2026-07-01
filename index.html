@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap" rel="stylesheet">
-<link href="style.css?v=1.9" rel="stylesheet">
+<link href="style.css?v=1.12" rel="stylesheet">
 </head>
 <body>
 
@@ -130,7 +130,7 @@
             <p class="work-case-block"><span class="work-case-label">The promise</span> Hoot Design Co.'s new brand identity would carry through to every patient touchpoint — including the web.</p>
             <p class="work-case-block"><span class="work-case-label">The exposure</span> The brand lived in guidelines and print, but the translation gap at the brand-to-web seam meant digital execution could drift from strategic intent without anyone naming it.</p>
             <p class="work-case-block work-case-block--verdict"><span class="work-case-label">The verdict</span> <em>What was at stake wasn't aesthetics — it was whether patients would feel the same care in the browser that the brand promised on paper.</em></p>
-            <p class="work-case-block"><span class="work-case-label">What happened next</span> Translated Hoot's vision into a high-performance web presence — bridging strategic intent with seamless, patient-first execution.</p>
+            <p class="work-case-block"><span class="work-case-label">What happened next</span> Translated Hoot's vision into a high-performance web presence — bridging strategic intent with seamless, patient-first execution. <a href="verdict/mca/">See the illustrative assessment →</a></p>
           </div>
         </div>
         <span class="work-force sl">Signal Loss</span>
@@ -185,7 +185,7 @@
         <h2 class="about-title reveal d1">Why this<br>work.</h2>
         <div class="about-body reveal d2">
           <p>I'm Jonathan Meyer — Director of Web Development at <strong>ArtSpeak Creative</strong> in St. Louis, where my work spans strategy, creative direction, and technical execution for clients in healthcare, research, education, and faith-based organizations.</p>
-          <p>I also teach Web Design and run <strong>Sightline</strong> — a diagnostic practice built around one question: <em>did the system keep the promise it made?</em> Engagements end in a <a href="verdict/">verdict document</a> — an exposure map, not a bug list.</p>
+          <p>I also teach Web Design and run <a href="sightline/">Sightline</a> — a diagnostic practice built around one question: <em>did the system keep the promise it made?</em> Engagements end in a bounded assessment and <a href="verdict/">exposure map</a>, not a bug list.</p>
         </div>
         <div class="disciplines reveal d3">
           <div class="discipline-row"><span class="discipline-name">Brand Identity</span><span class="discipline-detail">Strategy → System → Launch</span></div>
@@ -255,6 +255,10 @@
             <span class="option-letter">D</span>
             <span class="option-text">I don't know which of these it is yet — but something's definitely off.</span>
           </button>
+          <button class="inquiry-option" onclick="selectOption(this,'E')">
+            <span class="option-letter">E</span>
+            <span class="option-text">I want a Sightline diagnostic — bounded assessment and exposure map, not a redesign.</span>
+          </button>
         </div>
       </div>
     </div>
@@ -268,9 +272,11 @@
       <span class="footer-copy">Built to carry. · St. Louis, MO</span>
       <ul class="footer-links">
         <li><a href="design-system/">Design System</a></li>
+        <li><a href="sightline/">Sightline</a></li>
         <li><a href="sightline-lived-out/">Sightline Lived Out</a></li>
         <li><a href="seam-field-guide/">Seam Field Guide</a></li>
         <li><a href="verdict/">Sample Verdict</a></li>
+        <li><a href="verdict/mca/">MCA Assessment</a></li>
         <li><a href="mailto:jmyr.creative@gmail.com">Email</a></li>
         <li><a href="https://www.linkedin.com/in/jonathansmeyer/" target="_blank" rel="noopener">LinkedIn</a></li>
       </ul>
@@ -292,7 +298,8 @@ const subjects = {
   A:'Brand inquiry — Trust Compression',
   B:'Diagnostic inquiry — Signal Loss',
   C:'Systems inquiry — Complexity Drag',
-  D:'General inquiry — not sure yet'
+  D:'General inquiry — not sure yet',
+  E:'Sightline diagnostic — assessment inquiry'
 };
 function selectOption(btn, letter) {
   document.querySelectorAll('.inquiry-option').forEach(b => b.classList.remove('selected'));

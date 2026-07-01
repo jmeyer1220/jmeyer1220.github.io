@@ -1,0 +1,40 @@
+---
+description: Sightline BDR alignment — governance gate for visual, copy, CSS, and IA work
+alwaysApply: true
+---
+
+# Sightline BDR Alignment
+
+Companion to `specs-and-adrs-before-code.mdc`, `style-css-cache-bust.mdc`, and `button-section-contrast.mdc`. Read those for full detail; this rule adds the **done** gate.
+
+## Before visual, copy, or IA changes
+
+1. Read `sightline-brand-system/AGENTS.md` and relevant locked BDRs in `sightline-brand-system/bdr/`.
+2. **Never edit a locked BDR body** — create a superseding BDR; set `superseded_by:` on the old file's frontmatter only.
+3. Untraceable tokens, colors, or copy → log in `sightline-brand-system/spec/04-provenance-debt-log.md` (do not silently default).
+
+## CSS and cache bust
+
+Follow `style-css-cache-bust.mdc`. Any `style.css` change → increment `?v=` in **every** HTML page that links it:
+
+- `index.html`
+- `design-system/index.html`
+- `sightline/index.html`
+- `sightline-lived-out/index.html`
+- `seam-field-guide/index.html`
+- `verdict/index.html`
+- `verdict/mca/index.html`
+
+Keep the same version across all pages.
+
+## CTAs on colored sections
+
+Follow `button-section-contrast.mdc` (BDR-0023): filled CTA background must not match the parent section surface. On `--c-deep` sections use `.on-deep` or documented section-scoped overrides — not default `.btn-primary`.
+
+## Specs and ADRs
+
+Follow `specs-and-adrs-before-code.mdc` for `docs/specs/` and ADR alignment on implementation changes.
+
+## Before considering CSS/governance work done
+
+Run `npm run validate` or `node scripts/validate-alignment.js`. Fix all errors; address warnings or log provenance debt.

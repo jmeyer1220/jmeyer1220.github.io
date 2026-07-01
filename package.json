@@ -1,0 +1,7 @@
+{
+  "name": "jmeyer1220-github-io",
+  "private": true,
+  "scripts": {
+    "validate": "node scripts/validate-alignment.js"
+  }
+}
