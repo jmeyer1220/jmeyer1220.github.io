@@ -696,9 +696,11 @@ body.sightline-lived-out .slo-arc--invite .btn-primary:hover {
 .work-num {
   padding-top: 0.2em;
 
-  font-size: var(--t-label);
-  font-weight: 600;
-  letter-spacing: 0.05em;
+  font-family: var(--font-accent);
+  font-size: clamp(0.85rem, 1.15vw, 1.05rem);
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.04em;
 
   color: var(--c-ink-faint);
 }
@@ -714,9 +716,12 @@ body.sightline-lived-out .slo-arc--invite .btn-primary:hover {
 
 .work-force-obs {
   font-family: var(--font-accent);
-  font-size: var(--t-small);
-  font-style: italic;
-  line-height: 1.5;
+  font-size: clamp(0.95rem, 1.25vw, 1.15rem);
+  font-style: normal;
+  font-weight: 500;
+  font-optical-sizing: auto;
+  letter-spacing: 0.01em;
+  line-height: 1.55;
 
   color: var(--c-signal);
 
@@ -756,9 +761,9 @@ body.sightline-lived-out .slo-arc--invite .btn-primary:hover {
 }
 
 .work-force.sl {
-  color: var(--c-deep-text);
+  color: var(--c-deep);
   border-color: var(--c-deep);
-  background: var(--c-deep);
+  background: var(--c-deep-a06);
 }
 
 .work-force.cd {
@@ -830,6 +835,17 @@ body.sightline-lived-out .slo-arc--invite .btn-primary:hover {
   font-family: var(--font-accent);
   color: var(--c-ink);
   font-style: italic;
+}
+
+.about-body a {
+  color: var(--c-signal);
+  text-decoration: underline;
+  text-decoration-color: var(--c-signal-a35);
+  text-underline-offset: 2px;
+}
+
+.about-body a:hover {
+  text-decoration-color: var(--c-signal);
 }
 
 .disciplines {
@@ -2370,4 +2386,381 @@ body.field-guide .site-chrome-footer {
   body.field-guide .site-chrome-footer {
     display: none;
   }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   EXPOSURE-CASE PATTERN — origin card + work item (BDR-0025)
+   ═══════════════════════════════════════════════════════════════ */
+
+.exposure-case {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-20);
+  margin-bottom: var(--sp-24);
+}
+
+.exposure-case-block {
+  max-width: var(--max-prose);
+}
+
+.exposure-case-label {
+  font-size: var(--t-label);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--c-signal);
+  margin-bottom: var(--sp-8);
+}
+
+.exposure-case-text {
+  font-size: var(--t-small);
+  line-height: 1.65;
+  color: var(--c-deep-text-muted);
+}
+
+.exposure-case-text--accent {
+  font-family: var(--font-accent);
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  font-weight: 500;
+  font-style: italic;
+  line-height: 1.55;
+  font-optical-sizing: auto;
+  letter-spacing: 0.01em;
+  color: var(--c-deep-text);
+}
+
+.work-exposure-case {
+  max-width: var(--max-prose);
+}
+
+.work-case-block {
+  font-size: var(--t-small);
+  line-height: 1.65;
+  color: var(--c-ink-muted);
+  margin-bottom: var(--sp-12);
+}
+
+.work-case-block:last-child {
+  margin-bottom: 0;
+}
+
+.work-case-label {
+  display: block;
+  font-size: var(--t-label);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--c-ink);
+  margin-bottom: var(--sp-4);
+}
+
+.work-case-block--verdict {
+  padding-left: var(--sp-12);
+  border-left: 2px solid var(--c-deep);
+}
+
+.work-case-block--verdict em {
+  font-family: var(--font-accent);
+  font-size: clamp(0.95rem, 1.25vw, 1.15rem);
+  font-style: normal;
+  font-weight: 500;
+  font-optical-sizing: auto;
+  letter-spacing: 0.01em;
+  line-height: 1.55;
+  color: var(--c-ink);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   VERDICT SAMPLE PAGE — body.verdict (BDR-0024)
+   Scoped to verdict/index.html; layered readability per BDR-0017.
+   ═══════════════════════════════════════════════════════════════ */
+
+body.verdict {
+  background: var(--c-ground);
+}
+
+body.verdict .verdict-hero {
+  padding: calc(var(--sp-96) + 3rem) 0 var(--sp-64);
+}
+
+body.verdict .verdict-eyebrow {
+  font-size: var(--t-label);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--c-signal);
+  margin-bottom: var(--sp-16);
+}
+
+body.verdict .verdict-title {
+  font-family: var(--font-display);
+  font-size: var(--t-h1);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--sp-20);
+}
+
+body.verdict .verdict-lede {
+  max-width: var(--max-prose);
+  font-size: var(--t-body);
+  line-height: 1.65;
+  color: var(--c-ink-muted);
+  margin-bottom: var(--sp-12);
+}
+
+body.verdict .verdict-disclaimer {
+  max-width: var(--max-prose);
+  font-size: var(--t-small);
+  line-height: 1.55;
+  color: var(--c-ink-faint);
+  font-style: italic;
+}
+
+body.verdict .verdict-section {
+  padding: var(--sp-64) 0;
+}
+
+body.verdict .verdict-section--alt {
+  background: var(--c-ground-alt);
+}
+
+body.verdict .verdict-section--verdict {
+  background: var(--c-deep);
+  color: var(--c-deep-text);
+}
+
+body.verdict .verdict-step {
+  font-size: var(--t-label);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--c-signal);
+  margin-bottom: var(--sp-12);
+}
+
+body.verdict .verdict-section--verdict .verdict-step {
+  color: var(--c-ground-a70);
+}
+
+body.verdict .verdict-section-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--sp-16);
+}
+
+body.verdict .verdict-section--verdict .verdict-section-title {
+  color: var(--c-deep-text);
+}
+
+body.verdict .verdict-section-lead {
+  max-width: var(--max-prose);
+  font-size: var(--t-body);
+  line-height: 1.65;
+  color: var(--c-ink-muted);
+  margin-bottom: var(--sp-20);
+}
+
+body.verdict .verdict-section--verdict .verdict-section-lead {
+  color: var(--c-deep-text-muted);
+}
+
+body.verdict .verdict-body {
+  max-width: var(--max-prose);
+  font-size: var(--t-body);
+  line-height: 1.7;
+  color: var(--c-ink-muted);
+}
+
+body.verdict .verdict-body--note {
+  margin-top: var(--sp-24);
+  font-size: var(--t-small);
+  font-style: italic;
+}
+
+body.verdict .plain-terms {
+  max-width: var(--max-prose);
+  padding: var(--sp-20);
+  margin-bottom: var(--sp-24);
+  background: var(--c-ground);
+  border-left: 3px solid var(--c-signal);
+  border-radius: 0 var(--r-md) var(--r-md) 0;
+}
+
+body.verdict .verdict-section--alt .plain-terms {
+  background: var(--c-ground);
+}
+
+body.verdict .plain-terms-label {
+  font-size: var(--t-label);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--c-signal);
+  margin-bottom: var(--sp-8);
+}
+
+body.verdict .plain-terms p:last-child {
+  font-size: var(--t-small);
+  line-height: 1.6;
+  color: var(--c-ink-muted);
+  margin: 0;
+}
+
+body.verdict .verdict-table-wrap {
+  overflow-x: auto;
+  margin-top: var(--sp-8);
+}
+
+body.verdict .verdict-exposure-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--t-small);
+}
+
+body.verdict .verdict-exposure-table thead tr {
+  border-bottom: 2px solid var(--c-ink);
+}
+
+body.verdict .verdict-exposure-table th {
+  text-align: left;
+  font-family: var(--font-display);
+  font-size: var(--t-label);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--c-ink);
+  padding: var(--sp-12) var(--sp-16) var(--sp-12) 0;
+}
+
+body.verdict .verdict-exposure-table td {
+  padding: var(--sp-16) var(--sp-16) var(--sp-16) 0;
+  vertical-align: top;
+  line-height: 1.55;
+  color: var(--c-ink-muted);
+  border-bottom: 1px solid var(--c-ink-faint);
+}
+
+body.verdict .verdict-exposure-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+body.verdict .verdict-tier-label {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: var(--t-label);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: var(--sp-4) var(--sp-12);
+  border-radius: var(--r-pill);
+  white-space: nowrap;
+}
+
+body.verdict .verdict-tier--urgent .verdict-tier-label {
+  color: var(--c-signal);
+  background: var(--c-signal-a08);
+  border: 1px solid var(--c-signal);
+}
+
+body.verdict .verdict-tier--watch .verdict-tier-label {
+  color: var(--c-drag);
+  background: var(--c-drag-a12);
+  border: 1px solid var(--c-drag);
+}
+
+body.verdict .verdict-tier--stable .verdict-tier-label {
+  color: var(--c-deep);
+  background: var(--c-deep-a06);
+  border: 1px solid var(--c-deep);
+}
+
+body.verdict .verdict-seam-list {
+  list-style: none;
+  max-width: var(--max-prose);
+  margin: 0;
+  padding: 0;
+}
+
+body.verdict .verdict-seam-item {
+  font-size: var(--t-body);
+  line-height: 1.6;
+  color: var(--c-ink-muted);
+  padding: var(--sp-12) 0;
+  border-bottom: 1px solid var(--c-ink-faint);
+}
+
+body.verdict .verdict-seam-item:last-child {
+  border-bottom: none;
+}
+
+body.verdict .verdict-seam-arrow {
+  color: var(--c-signal);
+  margin-right: var(--sp-8);
+}
+
+body.verdict .verdict-blockquote {
+  max-width: var(--max-prose);
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+body.verdict .verdict-blockquote p {
+  font-family: var(--font-accent);
+  font-size: clamp(1.1rem, 2.2vw, 1.45rem);
+  font-weight: 500;
+  font-style: italic;
+  line-height: 1.55;
+  font-optical-sizing: auto;
+  letter-spacing: 0.01em;
+  color: var(--c-deep-text);
+}
+
+body.verdict .verdict-sequence-list {
+  max-width: var(--max-prose);
+  margin: 0 0 var(--sp-8);
+  padding-left: var(--sp-24);
+}
+
+body.verdict .verdict-sequence-list li {
+  font-size: var(--t-body);
+  line-height: 1.65;
+  color: var(--c-ink-muted);
+  padding: var(--sp-8) 0;
+}
+
+body.verdict .verdict-sequence-list strong {
+  color: var(--c-ink);
+  font-weight: 600;
+}
+
+body.verdict .verdict-invite-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-16);
+  margin-top: var(--sp-32);
+}
+
+body.verdict .ds-bdr-tag {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-display);
+  font-size: var(--t-label);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--c-signal);
+  background: var(--c-signal-a08);
+  padding: var(--sp-4) var(--sp-12);
+  border-radius: var(--r-pill);
+  margin-top: var(--sp-24);
+}
+
+body.verdict .verdict-section--verdict .ds-bdr-tag {
+  background: var(--c-ground-a08);
+  color: var(--c-ground-a70);
 }

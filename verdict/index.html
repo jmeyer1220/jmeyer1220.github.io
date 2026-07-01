@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Sample Sightline Verdict — redacted fixed-scope diagnostic ending in an exposure map and clear verdict. Illustrative deliverable only.">
+<title>Sightline Verdict (Sample) — Jonathan Meyer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap" rel="stylesheet">
+<link href="../style.css?v=1.9" rel="stylesheet">
+</head>
+<body class="verdict">
+
+<nav id="nav" aria-label="Site">
+  <a href="../" class="nav-name">Jonathan Meyer</a>
+  <ul class="nav-links">
+    <li><a href="../#work">Work</a></li>
+    <li><a href="../#about">About</a></li>
+    <li><a href="../#inquiry" class="nav-cta">Inquire →</a></li>
+  </ul>
+</nav>
+
+<header class="verdict-hero">
+  <div class="wrap">
+    <p class="verdict-eyebrow">Sightline Verdict · Redacted Client · fixed-scope diagnostic</p>
+    <h1 class="verdict-title">Sample verdict document</h1>
+    <p class="verdict-lede">This is an illustrative deliverable — anonymized, redacted, and shortened. It shows what a Sightline engagement ends with: not a bug list, but a map of where promises are at risk.</p>
+    <p class="verdict-disclaimer">Supported living provider (Midwest). Names, URLs, and vendor details removed. Content is representative, not a live client file.</p>
+  </div>
+</header>
+
+<main class="verdict-main">
+
+  <section class="verdict-section" aria-labelledby="promise-title">
+    <div class="wrap">
+      <p class="verdict-step">01 — The promise</p>
+      <h2 class="verdict-section-title" id="promise-title">What the organization believed the system was doing</h2>
+      <p class="verdict-section-lead">Families and care coordinators could reach out through the website when someone needed a residential placement.</p>
+      <p class="verdict-body">The contact form on the homepage was treated as the front door for new intakes. Marketing copy promised a response within one business day. Staff assumed every submission landed in the CRM. Leadership believed the digital intake path matched what families were told on the phone.</p>
+      <span class="ds-bdr-tag">BDR-0005</span>
+    </div>
+  </section>
+
+  <section class="verdict-section verdict-section--alt" aria-labelledby="exposure-title">
+    <div class="wrap">
+      <p class="verdict-step">02 — Exposure surface</p>
+      <h2 class="verdict-section-title" id="exposure-title">Where promises are at risk</h2>
+      <p class="verdict-section-lead">An <strong>exposure surface</strong> is a map of where the system's promises might fail — sorted by urgency, not by which team owns the fix.</p>
+
+      <aside class="plain-terms" aria-label="In plain terms">
+        <p class="plain-terms-label">In plain terms</p>
+        <p>Think of it like a weather map for trust: some spots need action now, some need watching, and some are holding.</p>
+      </aside>
+
+      <div class="verdict-table-wrap">
+        <table class="verdict-exposure-table">
+          <thead>
+            <tr>
+              <th scope="col">Tier</th>
+              <th scope="col">Finding</th>
+              <th scope="col">Why it matters</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="verdict-tier verdict-tier--urgent">
+              <td><span class="verdict-tier-label">Urgent</span></td>
+              <td>Homepage contact form failing silently — expired third-party API key</td>
+              <td>Every submission since key expiry discarded with no error shown to the visitor and no alert to staff</td>
+            </tr>
+            <tr class="verdict-tier verdict-tier--watch">
+              <td><span class="verdict-tier-label">Watch</span></td>
+              <td>No error monitoring on form submission path</td>
+              <td>Next failure would repeat the same silent gap — no one would know until intake volume dropped</td>
+            </tr>
+            <tr class="verdict-tier verdict-tier--watch">
+              <td><span class="verdict-tier-label">Watch</span></td>
+              <td>Success message still displays after failed submission</td>
+              <td>Visitors believe help is on the way; organization believes silence means low demand</td>
+            </tr>
+            <tr class="verdict-tier verdict-tier--watch">
+              <td><span class="verdict-tier-label">Watch</span></td>
+              <td>No documented backup intake path on the site</td>
+              <td>Phone number exists but is not surfaced as fallback when digital intake fails</td>
+            </tr>
+            <tr class="verdict-tier verdict-tier--stable">
+              <td><span class="verdict-tier-label">Stable</span></td>
+              <td>Phone intake line staffed and logged in CRM</td>
+              <td>Human path works — but volume is low because marketing drives families to the form</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <span class="ds-bdr-tag">BDR-0017</span>
+    </div>
+  </section>
+
+  <section class="verdict-section" aria-labelledby="seams-title">
+    <div class="wrap">
+      <p class="verdict-step">03 — Seams named</p>
+      <h2 class="verdict-section-title" id="seams-title">Where interpretation authority changed hands</h2>
+      <p class="verdict-section-lead">These are the handoffs where meaning got lost — not because anyone failed, but because no one owned the seam.</p>
+      <ul class="verdict-seam-list">
+        <li class="verdict-seam-item"><span class="verdict-seam-arrow">→</span> Original developer departed — no one retained backend access or API credentials documentation</li>
+        <li class="verdict-seam-item"><span class="verdict-seam-arrow">→</span> Marketing owns front-end copy and form UX; operations owns CRM — neither monitors submission delivery</li>
+        <li class="verdict-seam-item"><span class="verdict-seam-arrow">→</span> Form plugin vendor rotated API keys; renewal notice went to a departed employee's inbox</li>
+        <li class="verdict-seam-item"><span class="verdict-seam-arrow">→</span> "The site works" tested visually, not functionally — green checkmark on publish masked broken intake</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="verdict-section verdict-section--verdict" aria-labelledby="verdict-title-block">
+    <div class="wrap">
+      <p class="verdict-step">04 — Verdict</p>
+      <h2 class="verdict-section-title" id="verdict-title-block">What you can't un-see</h2>
+      <p class="verdict-section-lead">One paragraph. The diagnostic question answered.</p>
+      <blockquote class="verdict-blockquote">
+        <p>The system did not keep the promise it made. Families were told they could reach out online and expect a response. For months, the form looked fine while every submission vanished — and because nothing alerted anyone, the organization interpreted silence as low demand rather than broken intake. The risk isn't one expired key. It's that no seam between marketing, web, and operations was owned enough to catch it.</p>
+      </blockquote>
+      <span class="ds-bdr-tag">BDR-0005</span>
+    </div>
+  </section>
+
+  <section class="verdict-section verdict-section--alt" aria-labelledby="sequence-title">
+    <div class="wrap">
+      <p class="verdict-step">05 — Recommended sequence</p>
+      <h2 class="verdict-section-title" id="sequence-title">What to fix first — and what to watch</h2>
+      <p class="verdict-section-lead">Not a build proposal. A priority order so fixes don't scatter.</p>
+      <ol class="verdict-sequence-list">
+        <li><strong>Restore and verify form delivery</strong> — rotate API credentials, submit test intakes, confirm CRM receipt</li>
+        <li><strong>Fix the success-state lie</strong> — form must not thank the visitor when submission failed</li>
+        <li><strong>Add submission monitoring</strong> — alert on failure, not on silence</li>
+        <li><strong>Surface backup intake on the site</strong> — phone path visible when digital path is primary marketing message</li>
+        <li><strong>Assign seam ownership</strong> — one role accountable for "does intake still work?" quarterly</li>
+      </ol>
+      <p class="verdict-body verdict-body--note">Full Sightline engagements include facilitated readout and seam documentation. This sample shows the written artifact only.</p>
+      <div class="verdict-invite-actions">
+        <a href="../#inquiry" class="btn-primary">Start a conversation</a>
+        <a href="../sightline-lived-out/" class="btn-secondary">How Sightline works on this site →</a>
+      </div>
+      <span class="ds-bdr-tag">BDR-0024</span>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-inner">
+      <span class="footer-name">Jonathan Meyer</span>
+      <span class="footer-copy">Built to carry. · St. Louis, MO</span>
+      <ul class="footer-links">
+        <li><a href="../">Home</a></li>
+        <li><a href="../design-system/">Design System</a></li>
+        <li><a href="../sightline-lived-out/">Sightline Lived Out</a></li>
+        <li><a href="../seam-field-guide/">Seam Field Guide</a></li>
+        <li><a href="../verdict/" aria-current="page">Sample Verdict</a></li>
+        <li><a href="mailto:jmyr.creative@gmail.com">Email</a></li>
+        <li><a href="https://www.linkedin.com/in/jonathansmeyer/" target="_blank" rel="noopener">LinkedIn</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script>
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 40), {passive:true});
+</script>
+
+</body>
+</html>
