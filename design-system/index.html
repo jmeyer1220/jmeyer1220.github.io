@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap" rel="stylesheet">
 <link rel="icon" href="data:,">
-<link href="../style.css?v=1.15" rel="stylesheet">
+<link href="../style.css?v=1.16" rel="stylesheet">
 </head>
 <body class="design-system">
 <a class="skip-link" href="#main-content">Skip to content</a>
@@ -27,7 +27,7 @@
   <div class="wrap">
     <p class="ds-eyebrow">Compiled intelligence</p>
     <h1 class="ds-title">Sightline Design System</h1>
-    <p class="ds-lede">Governed tokens, components, and patterns for jmeyer1220.github.io — each decision traced to a locked BDR. This catalog is a production artifact, not a draft spec. Display policy: <em>BDR-0011</em>.</p>
+    <p class="ds-lede">Governed tokens, components, and patterns for jmeyer1220.github.io — each decision traced to a locked BDR. This catalog is a production artifact, not a draft spec. Display policy: <em>BDR-0032</em>.</p>
     <p class="ds-lede">This is a governed design system with decision records, built for a small site.</p>
   </div>
 </header>
@@ -347,12 +347,9 @@
       <div class="ds-section-head">
         <p class="ds-section-label">04 — Provenance</p>
         <h2 class="ds-section-title" id="provenance-title">Locked BDR index</h2>
-        <p class="ds-section-desc">One-line decisions only on public pages (BDR-0011). Full rationale and rejected alternatives live in repo BDR files.</p>
+        <p class="ds-section-desc">One-line decisions only on public pages (BDR-0032). Full rationale and rejected alternatives live in private repo BDR files.</p>
       </div>
-      <div class="ds-table-scroll" data-table-scroll>
-        <p class="ds-scroll-hint" aria-hidden="true">scroll →</p>
-        <div class="ds-table-frame">
-          <div class="ds-table-wrap">
+      <div class="ds-table-wrap">
         <table class="ds-table ds-prov-table">
           <thead>
             <tr>
@@ -360,7 +357,6 @@
               <th scope="col">Title</th>
               <th scope="col">Decision (one line)</th>
               <th scope="col">Status</th>
-              <th scope="col">Source</th>
             </tr>
           </thead>
           <tbody>
@@ -369,215 +365,191 @@
               <td>Primary mark geometry</td>
               <td>Three concentric circles as sole graphic mark — hero only, no SVG logo shipped.</td>
               <td><span class="ds-status ds-status--locked">locked</span></td>
-              <td><a href="../sightline-brand-system/bdr/0001-primary-mark-geometry.md">bdr/0001</a> · <a href="../sightline-brand-system/bdr/0016-primary-mark-provenance-trail.md">0016 trail</a></td>
             </tr>
             <tr>
               <td class="ds-token-name">BDR-0002</td>
               <td>CTA color role</td>
               <td>Four CTA treatments documented as-is — superseded by BDR-0013.</td>
               <td><span class="ds-status ds-status--revised">revised</span></td>
-              <td><a href="../sightline-brand-system/bdr/0002-cta-color-role.md">bdr/0002</a></td>
             </tr>
             <tr>
               <td class="ds-token-name">BDR-0003</td>
               <td>Typography system</td>
               <td>Two-font Bricolage + Inter stack — superseded by BDR-0009.</td>
               <td><span class="ds-status ds-status--revised">revised</span></td>
-              <td><a href="../sightline-brand-system/bdr/0003-typography-system.md">bdr/0003</a></td>
             </tr>
             <tr>
               <td class="ds-token-name">BDR-0004</td>
               <td>Three-force IA</td>
               <td>Site organizes around exactly three named forces for IA and case-study tagging.</td>
               <td><span class="ds-status ds-status--locked">locked</span></td>
-              <td><a href="../sightline-brand-system/bdr/0004-three-force-ia.md">bdr/0004</a></td>
             </tr>
             <tr>
               <td class="ds-token-name">BDR-0005</td>
               <td>Diagnostic-first voice</td>
               <td>Every section states organizational failure before capability claim.</td>
               <td><span class="ds-status ds-status--locked">locked</span></td>
-              <td><a href="../sightline-brand-system/bdr/0005-diagnostic-first-voice.md">bdr/0005</a></td>
             </tr>
             <tr>
               <td class="ds-token-name">BDR-0006</td>
               <td>Self-diagnosis CTA</td>
               <td>Closing conversion is A/B/C/D self-diagnosis, not a standard contact form.</td>
               <td><span class="ds-status ds-status--locked">locked</span></td>
-              <td><a href="../sightline-brand-system/bdr/0006-self-diagnosis-cta.md">bdr/0006</a></td>
             </tr>
             <tr>
               <td class="ds-token-name">BDR-0007</td>
               <td>Work before About</td>
               <td>Nav and page order: Work → About → Inquire; evidence before bio.</td>
               <td><span class="ds-status ds-status--locked">locked</span></td>
-              <td><a href="../sightline-brand-system/bdr/0007-work-before-about.md">bdr/0007</a></td>
             </tr>
             <tr>
               <td class="ds-token-name">BDR-0008</td>
               <td>Force-tag color gap</td>
               <td>Incomplete two-hue map — superseded by BDR-0012.</td>
               <td><span class="ds-status ds-status--revised">revised</span></td>
-              <td><a href="../sightline-brand-system/bdr/0008-force-tag-color-gap.md">bdr/0008</a></td>
             </tr>
             <tr>
               <td class="ds-token-name">BDR-0009</td>
               <td>Instrument typography suite</td>
               <td>Bricolage display, Instrument Sans body, Instrument Serif accent — replaces Inter.</td>
               <td><span class="ds-status ds-status--locked">locked</span></td>
-              <td><a href="../sightline-brand-system/bdr/0009-instrument-typography-suite.md">bdr/0009</a></td>
             </tr>
             <tr>
               <td class="ds-token-name">BDR-0010</td>
               <td>Public design-system surfaces</td>
               <td>This catalog and Sightline Lived Out ship as footer-linked production pages.</td>
               <td><span class="ds-status ds-status--locked">locked</span></td>
-              <td><a href="../sightline-brand-system/bdr/0010-public-design-system-surfaces.md">bdr/0010</a></td>
             </tr>
             <tr>
               <td class="ds-token-name">BDR-0011</td>
               <td>Public provenance policy</td>
-              <td>Public pages show ID, title, one-line decision, status — not full BDR essays.</td>
-              <td><span class="ds-status ds-status--locked">locked</span></td>
-              <td><a href="../sightline-brand-system/bdr/0011-public-provenance-policy.md">bdr/0011</a></td>
+              <td>Public pages show ID, title, one-line decision, status — not full BDR essays. Superseded by BDR-0032.</td>
+              <td><span class="ds-status ds-status--revised">revised</span></td>
             </tr>
             <tr>
               <td class="ds-token-name">BDR-0012</td>
               <td>Force-tag complete palette</td>
               <td>Three categorical hues — TC signal, SL deep, CD drag. Tag fill superseded by BDR-0021, outline parity by BDR-0026.</td>
               <td><span class="ds-status ds-status--locked">locked</span></td>
-              <td><a href="../sightline-brand-system/bdr/0012-force-tag-complete-palette.md">bdr/0012</a></td>
             </tr>
             <tr>
               <td class="ds-token-name">BDR-0013</td>
               <td>CTA color role system</td>
               <td>Primary filled, secondary inline, diagnostic selector, tertiary link — supersedes BDR-0002.</td>
               <td><span class="ds-status ds-status--locked">locked</span></td>
-              <td><a href="../sightline-brand-system/bdr/0013-cta-color-role-system.md">bdr/0013</a></td>
             </tr>
             <tr>
               <td class="ds-token-name">BDR-0014</td>
               <td>Field-guide token roles</td>
               <td><code>--c-ground-dark</code> shell and <code>--t-h2</code> doc titles on field guide only.</td>
               <td><span class="ds-status ds-status--locked">locked</span></td>
-              <td><a href="../sightline-brand-system/bdr/0014-field-guide-token-roles.md">bdr/0014</a></td>
             </tr>
             <tr>
               <td class="ds-token-name">BDR-0015</td>
               <td>Alpha opacity scale</td>
               <td>Governed <code>--c-*-a*</code> tokens; rgba only in <code>:root</code> definitions.</td>
               <td><span class="ds-status ds-status--locked">locked</span></td>
-              <td><a href="../sightline-brand-system/bdr/0015-alpha-opacity-scale.md">bdr/0015</a></td>
             </tr>
             <tr>
               <td class="ds-token-name">BDR-0016</td>
               <td>Mark provenance trail</td>
               <td>Completes BDR-0001 rationale and rejected-alternatives audit trail.</td>
               <td><span class="ds-status ds-status--locked">locked</span></td>
-              <td><a href="../sightline-brand-system/bdr/0016-primary-mark-provenance-trail.md">bdr/0016</a></td>
             </tr>
             <tr>
               <td class="ds-token-name">BDR-0017</td>
               <td>Field guide plain-language layer</td>
               <td>Lead line + body + optional callouts on seam-field-guide — readability without voice dilution.</td>
               <td><span class="ds-status ds-status--locked">locked</span></td>
-              <td><a href="../sightline-brand-system/bdr/0017-field-guide-plain-language-layer.md">bdr/0017</a></td>
             </tr>
             <tr>
               <td class="ds-token-name">BDR-0018</td>
               <td>Public BDR definition copy</td>
               <td>Plain-language BDR definition on lived-out page; layered readability on case study.</td>
               <td><span class="ds-status ds-status--locked">locked</span></td>
-              <td><a href="../sightline-brand-system/bdr/0018-public-bdr-definition-copy.md">bdr/0018</a></td>
             </tr>
             <tr>
               <td class="ds-token-name">BDR-0019</td>
               <td>Clean directory URLs</td>
               <td>Secondary pages use folder + <code>index.html</code> clean URLs; redirect stubs at former <code>.html</code> paths.</td>
               <td><span class="ds-status ds-status--locked">locked</span></td>
-              <td><a href="../sightline-brand-system/bdr/0019-clean-directory-urls.md">bdr/0019</a></td>
             </tr>
             <tr>
               <td class="ds-token-name">BDR-0020</td>
               <td>Deep-surface contrast + prose measure</td>
               <td><code>--c-deep-text-muted/subtle</code> roles on dark green; <code>--max-prose: 65ch</code> for body copy.</td>
               <td><span class="ds-status ds-status--locked">locked</span></td>
-              <td><a href="../sightline-brand-system/bdr/0020-deep-surface-contrast-and-prose-measure.md">bdr/0020</a></td>
             </tr>
             <tr>
               <td class="ds-token-name">BDR-0021</td>
               <td>Force-tag fill pattern</td>
               <td>Solid deep fill for Signal Loss; tinted drag outline for Complexity Drag — supersedes BDR-0012 fill.</td>
               <td><span class="ds-status ds-status--locked">locked</span></td>
-              <td><a href="../sightline-brand-system/bdr/0021-force-tag-categorical-fill-pattern.md">bdr/0021</a></td>
             </tr>
             <tr>
               <td class="ds-token-name">BDR-0022</td>
               <td>Instrument Serif on dark</td>
               <td>Dark-bg accent legibility — full cream, optical sizing, weight 500 (extends BDR-0009).</td>
               <td><span class="ds-status ds-status--locked">locked</span></td>
-              <td><a href="../sightline-brand-system/bdr/0022-instrument-serif-dark-surface-instantiation.md">bdr/0022</a></td>
             </tr>
             <tr>
               <td class="ds-token-name">BDR-0023</td>
               <td>Section surface vs CTA fill</td>
               <td>A filled CTA must not share its section&rsquo;s resolved background — cream fill on <code>--c-deep</code>, deep fill on cream (extends BDR-0013).</td>
               <td><span class="ds-status ds-status--locked">locked</span></td>
-              <td><a href="../sightline-brand-system/bdr/0023-section-surface-cta-contrast.md">bdr/0023</a></td>
             </tr>
             <tr>
               <td class="ds-token-name">BDR-0024</td>
               <td>Public verdict sample page</td>
               <td>Redacted Sightline verdict document at <code>/verdict/</code> — footer discovery, illustrative deliverable scope.</td>
               <td><span class="ds-status ds-status--locked">locked</span></td>
-              <td><a href="../sightline-brand-system/bdr/0024-public-verdict-sample-page.md">bdr/0024</a></td>
             </tr>
             <tr>
               <td class="ds-token-name">BDR-0025</td>
               <td>Exposure-case content pattern</td>
               <td>Promise → silence/exposure → verdict → next on origin card and one work item (MCA).</td>
               <td><span class="ds-status ds-status--locked">locked</span></td>
-              <td><a href="../sightline-brand-system/bdr/0025-exposure-case-content-pattern.md">bdr/0025</a></td>
             </tr>
             <tr>
               <td class="ds-token-name">BDR-0026</td>
               <td>Work-section typography + force-tag parity</td>
               <td>Unified outline+tint force pills; Instrument Serif register numbers; light-surface accent legibility for force-obs and verdict em.</td>
               <td><span class="ds-status ds-status--locked">locked</span></td>
-              <td><a href="../sightline-brand-system/bdr/0026-work-section-typography-force-tag-parity.md">bdr/0026</a></td>
             </tr>
             <tr>
               <td class="ds-token-name">BDR-0029</td>
               <td>MCA competing-hypotheses assessment</td>
               <td>Second public sample at <code>/verdict/mca/</code> — bounded assessment without forced convergence.</td>
               <td><span class="ds-status ds-status--locked">locked</span></td>
-              <td><a href="../sightline-brand-system/bdr/0029-mca-competing-hypotheses-assessment.md">bdr/0029</a></td>
             </tr>
             <tr>
               <td class="ds-token-name">BDR-0030</td>
               <td>Sightline public offer page</td>
               <td>Fixed-scope diagnostic engagement at <code>/sightline/</code> — embedded methodology chain, inquiry option E.</td>
               <td><span class="ds-status ds-status--locked">locked</span></td>
-              <td><a href="../sightline-brand-system/bdr/0030-sightline-public-offer-page.md">bdr/0030</a></td>
             </tr>
             <tr>
               <td class="ds-token-name">BDR-0031</td>
               <td>Verdict sample scenario — Boone Supported Living</td>
               <td>Corrects the verdict sample and origin card scenario to silent-failing maintenance requests; BDR-0024/0025 structure stays binding.</td>
               <td><span class="ds-status ds-status--locked">locked</span></td>
-              <td><a href="../sightline-brand-system/bdr/0031-verdict-sample-boone-maintenance-scenario.md">bdr/0031</a></td>
+            </tr>
+            <tr>
+              <td class="ds-token-name">BDR-0032</td>
+              <td>Public BDR identifiers</td>
+              <td>Public pages show the BDR ID as plain text; source files are not linked. Supersedes BDR-0011.</td>
+              <td><span class="ds-status ds-status--locked">locked</span></td>
             </tr>
           </tbody>
         </table>
-          </div>
-        </div>
       </div>
+      <p class="ds-section-desc ds-prov-note">BDR-0027 and BDR-0028 were never issued; numbering skips them intentionally.</p>
+      <p class="ds-section-desc ds-prov-note">Source BDR files live in a private repo and are not published.</p>
 
       <aside class="ds-debt" aria-labelledby="debt-title">
         <p class="ds-debt-title" id="debt-title">Known provenance debt (honest flags)</p>
         <ul>
           <li><strong>Portfolio:</strong> No homepage case study tagged Complexity Drag yet — CSS and catalog preview ready (BDR-0012).</li>
-          <li><strong>Hosted docs:</strong> BDR markdown links in this table may 404 on GitHub Pages deploy.</li>
           <li><strong>Layout tokens:</strong> Scoped <code>.ds-*</code> / <code>.slo-*</code> helpers not extracted to token file.</li>
           <li><strong>Introduction:</strong> The sentence under the catalog lede is new copy and is not yet traced to a locked BDR.</li>
         </ul>
@@ -610,22 +582,6 @@
 <script>
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 40), {passive:true});
-
-document.querySelectorAll('[data-table-scroll]').forEach((root) => {
-  const scroller = root.querySelector('.ds-table-wrap');
-  if (!scroller) return;
-  const update = () => {
-    const max = scroller.scrollWidth - scroller.clientWidth;
-    const can = max > 1;
-    root.classList.toggle('can-scroll', can);
-    root.classList.toggle('at-start', !can || scroller.scrollLeft <= 1);
-    root.classList.toggle('at-end', can && scroller.scrollLeft >= max - 1);
-  };
-  scroller.addEventListener('scroll', update, { passive: true });
-  if ('ResizeObserver' in window) new ResizeObserver(update).observe(scroller);
-  if (document.fonts && document.fonts.ready) document.fonts.ready.then(update);
-  update();
-});
 </script>
 
 </body>
