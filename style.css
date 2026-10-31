@@ -1830,6 +1830,65 @@ body.design-system .ds-table-wrap {
   margin-bottom: var(--sp-16);
 }
 
+/* Provenance table scrolls on a phone; cue uses existing tokens only. */
+body.design-system .ds-table-scroll {
+  position: relative;
+}
+
+body.design-system .ds-scroll-hint {
+  display: none;
+  margin: 0 0 var(--sp-8);
+  font-family: var(--font-display);
+  font-size: var(--t-label);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-align: right;
+  color: var(--c-ink-muted);
+}
+
+body.design-system .ds-table-scroll.can-scroll .ds-scroll-hint {
+  display: block;
+}
+
+body.design-system .ds-table-scroll.at-end .ds-scroll-hint {
+  visibility: hidden;
+}
+
+body.design-system .ds-table-frame {
+  position: relative;
+}
+
+body.design-system .ds-table-frame::before,
+body.design-system .ds-table-frame::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: var(--sp-32);
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+}
+
+body.design-system .ds-table-frame::before {
+  left: 0;
+  background: linear-gradient(to right, var(--c-ground), var(--c-ground-a05));
+  box-shadow: var(--sp-8) 0 var(--sp-12) var(--c-shadow-a10);
+}
+
+body.design-system .ds-table-frame::after {
+  right: 0;
+  background: linear-gradient(to left, var(--c-ground), var(--c-ground-a05));
+  box-shadow: calc(-1 * var(--sp-8)) 0 var(--sp-12) var(--c-shadow-a10);
+}
+
+body.design-system .ds-table-scroll.can-scroll:not(.at-start) .ds-table-frame::before,
+body.design-system .ds-table-scroll.can-scroll:not(.at-end) .ds-table-frame::after {
+  opacity: 1;
+  visibility: visible;
+}
+
 body.design-system .ds-table {
   width: 100%;
   border-collapse: collapse;

@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap" rel="stylesheet">
 <link rel="icon" href="data:,">
-<link href="../style.css?v=1.13" rel="stylesheet">
+<link href="../style.css?v=1.14" rel="stylesheet">
 </head>
 <body class="design-system">
 <a class="skip-link" href="#main-content">Skip to content</a>
@@ -348,7 +348,10 @@
         <h2 class="ds-section-title" id="provenance-title">Locked BDR index</h2>
         <p class="ds-section-desc">One-line decisions only on public pages (BDR-0011). Full rationale and rejected alternatives live in repo BDR files.</p>
       </div>
-      <div class="ds-table-wrap">
+      <div class="ds-table-scroll" data-table-scroll>
+        <p class="ds-scroll-hint" aria-hidden="true">scroll →</p>
+        <div class="ds-table-frame">
+          <div class="ds-table-wrap">
         <table class="ds-table ds-prov-table">
           <thead>
             <tr>
@@ -565,6 +568,8 @@
             </tr>
           </tbody>
         </table>
+          </div>
+        </div>
       </div>
 
       <aside class="ds-debt" aria-labelledby="debt-title">
@@ -603,6 +608,22 @@
 <script>
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 40), {passive:true});
+
+document.querySelectorAll('[data-table-scroll]').forEach((root) => {
+  const scroller = root.querySelector('.ds-table-wrap');
+  if (!scroller) return;
+  const update = () => {
+    const max = scroller.scrollWidth - scroller.clientWidth;
+    const can = max > 1;
+    root.classList.toggle('can-scroll', can);
+    root.classList.toggle('at-start', !can || scroller.scrollLeft <= 1);
+    root.classList.toggle('at-end', can && scroller.scrollLeft >= max - 1);
+  };
+  scroller.addEventListener('scroll', update, { passive: true });
+  if ('ResizeObserver' in window) new ResizeObserver(update).observe(scroller);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(update);
+  update();
+});
 </script>
 
 </body>
