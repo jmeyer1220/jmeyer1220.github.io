@@ -127,6 +127,25 @@ a {
   }
 }
 
+/* SKIP LINK — hidden until keyboard focus; reuses primary CTA role (BDR-0013) */
+.skip-link {
+  position: absolute;
+  left: var(--sp-16);
+  top: var(--sp-16);
+  z-index: 200;
+  transform: translateY(-200%);
+  background: var(--c-deep);
+  color: var(--c-deep-text);
+  padding: var(--sp-8) var(--sp-20);
+  border-radius: var(--r-pill);
+  font-size: var(--t-small);
+  font-weight: 600;
+}
+
+.skip-link:focus {
+  transform: none;
+}
+
 /* NAV */
 nav {
   position: fixed;
@@ -1109,6 +1128,7 @@ footer {
 
 .footer-links {
   display: flex;
+  flex-wrap: wrap;
   gap: var(--sp-20);
 
   list-style: none;
@@ -3374,4 +3394,23 @@ body.sightline-offer .ds-bdr-tag {
 body.sightline-offer .so-section--cta .ds-bdr-tag {
   background: var(--c-ground-a08);
   color: var(--c-ground-a70);
+}
+/* REDUCED MOTION — honor user preference; no new tokens */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
 }

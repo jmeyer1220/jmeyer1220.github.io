@@ -8,9 +8,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap" rel="stylesheet">
-<link href="../style.css?v=1.12" rel="stylesheet">
+<link rel="icon" href="data:,">
+<link href="../style.css?v=1.13" rel="stylesheet">
 </head>
 <body class="design-system">
+<a class="skip-link" href="#main-content">Skip to content</a>
 
 <nav id="nav" aria-label="Site">
   <a href="../" class="nav-name">Jonathan Meyer</a>
@@ -29,7 +31,7 @@
   </div>
 </header>
 
-<main class="ds-main">
+<main class="ds-main" id="main-content" tabindex="-1">
 
   <!-- FOUNDATIONS -->
   <section class="ds-section" id="foundations" aria-labelledby="foundations-title">
@@ -156,8 +158,10 @@
               <tr><td class="ds-token-name">--sp-8</td><td>0.5rem</td><td><div class="ds-spacing-bar"><span class="ds-spacing-block" style="width: var(--sp-8)"></span></div></td></tr>
               <tr><td class="ds-token-name">--sp-12</td><td>0.75rem</td><td><div class="ds-spacing-bar"><span class="ds-spacing-block" style="width: var(--sp-12)"></span></div></td></tr>
               <tr><td class="ds-token-name">--sp-16</td><td>1rem</td><td><div class="ds-spacing-bar"><span class="ds-spacing-block" style="width: var(--sp-16)"></span></div></td></tr>
+              <tr><td class="ds-token-name">--sp-20</td><td>1.25rem</td><td><div class="ds-spacing-bar"><span class="ds-spacing-block" style="width: var(--sp-20)"></span></div></td></tr>
               <tr><td class="ds-token-name">--sp-24</td><td>1.5rem</td><td><div class="ds-spacing-bar"><span class="ds-spacing-block" style="width: var(--sp-24)"></span></div></td></tr>
               <tr><td class="ds-token-name">--sp-32</td><td>2rem</td><td><div class="ds-spacing-bar"><span class="ds-spacing-block" style="width: var(--sp-32)"></span></div></td></tr>
+              <tr><td class="ds-token-name">--sp-40</td><td>2.5rem</td><td><div class="ds-spacing-bar"><span class="ds-spacing-block" style="width: var(--sp-40)"></span></div></td></tr>
               <tr><td class="ds-token-name">--sp-48</td><td>3rem</td><td><div class="ds-spacing-bar"><span class="ds-spacing-block" style="width: var(--sp-48)"></span></div></td></tr>
               <tr><td class="ds-token-name">--sp-64</td><td>4rem</td><td><div class="ds-spacing-bar"><span class="ds-spacing-block" style="width: var(--sp-64)"></span></div></td></tr>
               <tr><td class="ds-token-name">--sp-80</td><td>5rem</td><td><div class="ds-spacing-bar"><span class="ds-spacing-block" style="width: var(--sp-80)"></span></div></td></tr>
@@ -189,9 +193,9 @@
           <div class="ds-preview-nav" role="presentation">
             <span class="nav-name">Jonathan Meyer</span>
             <ul class="nav-links">
-              <li><a href="#">Work</a></li>
-              <li><a href="#">About</a></li>
-              <li><a href="#" class="nav-cta">Inquire →</a></li>
+              <li><a>Work</a></li>
+              <li><a>About</a></li>
+              <li><a class="nav-cta">Inquire →</a></li>
             </ul>
           </div>
         </div>
@@ -206,8 +210,8 @@
         <div class="ds-preview">
           <p class="ds-preview-label">Preview</p>
           <div class="hero-actions">
-            <a href="#" class="btn-primary">See the work</a>
-            <a href="#" class="btn-secondary">Start a conversation →</a>
+            <a class="btn-primary">See the work</a>
+            <a class="btn-secondary">Start a conversation →</a>
           </div>
         </div>
       </div>
@@ -330,7 +334,7 @@
         <article class="ds-pattern-card">
           <span class="ds-bdr-tag">BDR-0012</span>
           <h3>Force tagging</h3>
-          <p>`.work-force.tc/.sl/.cd` — unified outline + tinted fill per force hue: Trust Compression (`--c-signal-a06`), Signal Loss (`--c-deep-a06`), Complexity Drag (`--c-drag-a12`). BDR-0026 (supersedes BDR-0021 fill).</p>
+          <p><code>.work-force.tc/.sl/.cd</code> — unified outline + tinted fill per force hue: Trust Compression (<code>--c-signal-a06</code>), Signal Loss (<code>--c-deep-a06</code>), Complexity Drag (<code>--c-drag-a12</code>). BDR-0026 (supersedes BDR-0021 fill).</p>
         </article>
       </div>
     </div>
@@ -483,6 +487,13 @@
               <td><a href="../sightline-brand-system/bdr/0018-public-bdr-definition-copy.md">bdr/0018</a></td>
             </tr>
             <tr>
+              <td class="ds-token-name">BDR-0019</td>
+              <td>Clean directory URLs</td>
+              <td>Secondary pages use folder + <code>index.html</code> clean URLs; redirect stubs at former <code>.html</code> paths.</td>
+              <td><span class="ds-status ds-status--locked">locked</span></td>
+              <td><a href="../sightline-brand-system/bdr/0019-clean-directory-urls.md">bdr/0019</a></td>
+            </tr>
+            <tr>
               <td class="ds-token-name">BDR-0020</td>
               <td>Deep-surface contrast + prose measure</td>
               <td><code>--c-deep-text-muted/subtle</code> roles on dark green; <code>--max-prose: 65ch</code> for body copy.</td>
@@ -504,18 +515,18 @@
               <td><a href="../sightline-brand-system/bdr/0022-instrument-serif-dark-surface-instantiation.md">bdr/0022</a></td>
             </tr>
             <tr>
-              <td class="ds-token-name">BDR-0024</td>
-              <td>Public verdict sample page</td>
-              <td>Redacted Sightline verdict document at `/verdict/` — footer discovery, illustrative deliverable scope.</td>
+              <td class="ds-token-name">BDR-0023</td>
+              <td>Section surface vs CTA fill</td>
+              <td>A filled CTA must not share its section&rsquo;s resolved background — cream fill on <code>--c-deep</code>, deep fill on cream (extends BDR-0013).</td>
               <td><span class="ds-status ds-status--locked">locked</span></td>
-              <td><a href="../sightline-brand-system/bdr/0024-public-verdict-sample-page.md">bdr/0024</a></td>
+              <td><a href="../sightline-brand-system/bdr/0023-section-surface-cta-contrast.md">bdr/0023</a></td>
             </tr>
             <tr>
-              <td class="ds-token-name">BDR-0026</td>
-              <td>Work-section typography + force-tag parity</td>
-              <td>Unified outline+tint force pills; Instrument Serif register numbers; light-surface accent legibility for force-obs and verdict em.</td>
+              <td class="ds-token-name">BDR-0024</td>
+              <td>Public verdict sample page</td>
+              <td>Redacted Sightline verdict document at <code>/verdict/</code> — footer discovery, illustrative deliverable scope.</td>
               <td><span class="ds-status ds-status--locked">locked</span></td>
-              <td><a href="../sightline-brand-system/bdr/0026-work-section-typography-force-tag-parity.md">bdr/0026</a></td>
+              <td><a href="../sightline-brand-system/bdr/0024-public-verdict-sample-page.md">bdr/0024</a></td>
             </tr>
             <tr>
               <td class="ds-token-name">BDR-0025</td>
@@ -525,18 +536,32 @@
               <td><a href="../sightline-brand-system/bdr/0025-exposure-case-content-pattern.md">bdr/0025</a></td>
             </tr>
             <tr>
+              <td class="ds-token-name">BDR-0026</td>
+              <td>Work-section typography + force-tag parity</td>
+              <td>Unified outline+tint force pills; Instrument Serif register numbers; light-surface accent legibility for force-obs and verdict em.</td>
+              <td><span class="ds-status ds-status--locked">locked</span></td>
+              <td><a href="../sightline-brand-system/bdr/0026-work-section-typography-force-tag-parity.md">bdr/0026</a></td>
+            </tr>
+            <tr>
               <td class="ds-token-name">BDR-0029</td>
               <td>MCA competing-hypotheses assessment</td>
-              <td>Second public sample at `/verdict/mca/` — bounded assessment without forced convergence.</td>
+              <td>Second public sample at <code>/verdict/mca/</code> — bounded assessment without forced convergence.</td>
               <td><span class="ds-status ds-status--locked">locked</span></td>
               <td><a href="../sightline-brand-system/bdr/0029-mca-competing-hypotheses-assessment.md">bdr/0029</a></td>
             </tr>
             <tr>
               <td class="ds-token-name">BDR-0030</td>
               <td>Sightline public offer page</td>
-              <td>Fixed-scope diagnostic engagement at `/sightline/` — embedded methodology chain, inquiry option E.</td>
+              <td>Fixed-scope diagnostic engagement at <code>/sightline/</code> — embedded methodology chain, inquiry option E.</td>
               <td><span class="ds-status ds-status--locked">locked</span></td>
               <td><a href="../sightline-brand-system/bdr/0030-sightline-public-offer-page.md">bdr/0030</a></td>
+            </tr>
+            <tr>
+              <td class="ds-token-name">BDR-0031</td>
+              <td>Verdict sample scenario — Boone Supported Living</td>
+              <td>Corrects the verdict sample and origin card scenario to silent-failing maintenance requests; BDR-0024/0025 structure stays binding.</td>
+              <td><span class="ds-status ds-status--locked">locked</span></td>
+              <td><a href="../sightline-brand-system/bdr/0031-verdict-sample-boone-maintenance-scenario.md">bdr/0031</a></td>
             </tr>
           </tbody>
         </table>
