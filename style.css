@@ -125,6 +125,25 @@ a {
   .wrap {
     padding: 0 var(--sp-20);
   }
+
+  /* Keep the inquire pill one line on a 320px phone. The name may wrap
+     at the word space; the links must not shrink into the pill. */
+  nav {
+    padding-left: var(--sp-20);
+    padding-right: var(--sp-20);
+    gap: var(--sp-12);
+  }
+
+  nav .nav-links {
+    gap: var(--sp-12);
+    flex-shrink: 0;
+  }
+
+  nav .nav-links a.nav-cta {
+    white-space: nowrap;
+    padding-left: var(--sp-12);
+    padding-right: var(--sp-12);
+  }
 }
 
 /* SKIP LINK — hidden until keyboard focus; reuses primary CTA role (BDR-0013) */
@@ -1834,65 +1853,6 @@ body.design-system .ds-table-wrap {
   margin-bottom: var(--sp-16);
 }
 
-/* Provenance table scrolls on a phone; cue uses existing tokens only. */
-body.design-system .ds-table-scroll {
-  position: relative;
-}
-
-body.design-system .ds-scroll-hint {
-  display: none;
-  margin: 0 0 var(--sp-8);
-  font-family: var(--font-display);
-  font-size: var(--t-label);
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-align: right;
-  color: var(--c-ink-muted);
-}
-
-body.design-system .ds-table-scroll.can-scroll .ds-scroll-hint {
-  display: block;
-}
-
-body.design-system .ds-table-scroll.at-end .ds-scroll-hint {
-  visibility: hidden;
-}
-
-body.design-system .ds-table-frame {
-  position: relative;
-}
-
-body.design-system .ds-table-frame::before,
-body.design-system .ds-table-frame::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: var(--sp-32);
-  z-index: 1;
-  pointer-events: none;
-  opacity: 0;
-  visibility: hidden;
-}
-
-body.design-system .ds-table-frame::before {
-  left: 0;
-  background: linear-gradient(to right, var(--c-ground), var(--c-ground-a05));
-  box-shadow: var(--sp-8) 0 var(--sp-12) var(--c-shadow-a10);
-}
-
-body.design-system .ds-table-frame::after {
-  right: 0;
-  background: linear-gradient(to left, var(--c-ground), var(--c-ground-a05));
-  box-shadow: calc(-1 * var(--sp-8)) 0 var(--sp-12) var(--c-shadow-a10);
-}
-
-body.design-system .ds-table-scroll.can-scroll:not(.at-start) .ds-table-frame::before,
-body.design-system .ds-table-scroll.can-scroll:not(.at-end) .ds-table-frame::after {
-  opacity: 1;
-  visibility: visible;
-}
-
 body.design-system .ds-table {
   width: 100%;
   border-collapse: collapse;
@@ -2099,14 +2059,17 @@ body.design-system .ds-debt li::before {
   color: var(--c-signal);
 }
 
-body.design-system .ds-prov-table td a {
-  color: var(--c-deep);
-  text-decoration: underline;
-  text-underline-offset: 2px;
+body.design-system .ds-prov-table th:first-child,
+body.design-system .ds-prov-table td:first-child {
+  white-space: nowrap;
 }
 
-body.design-system .ds-prov-table td a:hover {
-  color: var(--c-deep-light);
+body.design-system .ds-prov-note {
+  margin-top: var(--sp-12);
+}
+
+body.design-system .ds-prov-note + .ds-prov-note {
+  margin-top: var(--sp-8);
 }
 
 body.design-system .ds-status {
@@ -2133,6 +2096,21 @@ body.design-system .ds-status--revised {
 
   body.design-system .ds-preview {
     padding: var(--sp-20);
+  }
+}
+
+/* 320px content width is 280px. Default cell padding keeps the index
+   about 39px too wide, which is what forced the scroll cue. Tighter
+   padding (existing --sp-4) lets the row fit without a horizontal scroll. */
+@media (max-width: 360px) {
+  body.design-system .ds-prov-table th,
+  body.design-system .ds-prov-table td {
+    padding-right: var(--sp-4);
+  }
+
+  body.design-system .ds-prov-table th:first-child,
+  body.design-system .ds-prov-table td:first-child {
+    white-space: normal;
   }
 }
 
