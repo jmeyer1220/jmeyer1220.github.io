@@ -1737,6 +1737,10 @@ body.design-system .ds-lede em {
   color: var(--c-ink);
 }
 
+body.design-system .ds-lede + .ds-lede {
+  margin-top: var(--sp-12);
+}
+
 body.design-system .ds-main {
   padding: var(--sp-48) 0 var(--sp-80);
 }
