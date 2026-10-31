@@ -127,6 +127,25 @@ a {
   }
 }
 
+/* SKIP LINK — hidden until keyboard focus; reuses primary CTA role (BDR-0013) */
+.skip-link {
+  position: absolute;
+  left: var(--sp-16);
+  top: var(--sp-16);
+  z-index: 200;
+  transform: translateY(-200%);
+  background: var(--c-deep);
+  color: var(--c-deep-text);
+  padding: var(--sp-8) var(--sp-20);
+  border-radius: var(--r-pill);
+  font-size: var(--t-small);
+  font-weight: 600;
+}
+
+.skip-link:focus {
+  transform: none;
+}
+
 /* NAV */
 nav {
   position: fixed;
@@ -1109,6 +1128,7 @@ footer {
 
 .footer-links {
   display: flex;
+  flex-wrap: wrap;
   gap: var(--sp-20);
 
   list-style: none;
@@ -1717,6 +1737,10 @@ body.design-system .ds-lede em {
   color: var(--c-ink);
 }
 
+body.design-system .ds-lede + .ds-lede {
+  margin-top: var(--sp-12);
+}
+
 body.design-system .ds-main {
   padding: var(--sp-48) 0 var(--sp-80);
 }
@@ -1808,6 +1832,65 @@ body.design-system .ds-bdr-tag {
 body.design-system .ds-table-wrap {
   overflow-x: auto;
   margin-bottom: var(--sp-16);
+}
+
+/* Provenance table scrolls on a phone; cue uses existing tokens only. */
+body.design-system .ds-table-scroll {
+  position: relative;
+}
+
+body.design-system .ds-scroll-hint {
+  display: none;
+  margin: 0 0 var(--sp-8);
+  font-family: var(--font-display);
+  font-size: var(--t-label);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-align: right;
+  color: var(--c-ink-muted);
+}
+
+body.design-system .ds-table-scroll.can-scroll .ds-scroll-hint {
+  display: block;
+}
+
+body.design-system .ds-table-scroll.at-end .ds-scroll-hint {
+  visibility: hidden;
+}
+
+body.design-system .ds-table-frame {
+  position: relative;
+}
+
+body.design-system .ds-table-frame::before,
+body.design-system .ds-table-frame::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: var(--sp-32);
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+}
+
+body.design-system .ds-table-frame::before {
+  left: 0;
+  background: linear-gradient(to right, var(--c-ground), var(--c-ground-a05));
+  box-shadow: var(--sp-8) 0 var(--sp-12) var(--c-shadow-a10);
+}
+
+body.design-system .ds-table-frame::after {
+  right: 0;
+  background: linear-gradient(to left, var(--c-ground), var(--c-ground-a05));
+  box-shadow: calc(-1 * var(--sp-8)) 0 var(--sp-12) var(--c-shadow-a10);
+}
+
+body.design-system .ds-table-scroll.can-scroll:not(.at-start) .ds-table-frame::before,
+body.design-system .ds-table-scroll.can-scroll:not(.at-end) .ds-table-frame::after {
+  opacity: 1;
+  visibility: visible;
 }
 
 body.design-system .ds-table {
@@ -3374,4 +3457,23 @@ body.sightline-offer .ds-bdr-tag {
 body.sightline-offer .so-section--cta .ds-bdr-tag {
   background: var(--c-ground-a08);
   color: var(--c-ground-a70);
+}
+/* REDUCED MOTION — honor user preference; no new tokens */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
 }
